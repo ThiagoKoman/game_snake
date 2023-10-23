@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+body{
+    background: black;
+    transform: scale(1.5);
+    overflow: hidden;
+}
+
+*{
+    box-sizing: border-box;
+    font-family: 'Pixelify Sans', sans-serif !important;
+
+}
+
+#game{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#board{
+    background: rgb(195, 255, 172);
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+div.card{
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dir-up{
+    transform: rotate(270deg);
+}
+.dir-left{
+    transform: rotate(180deg);
+}
+.dir-down{
+    transform: rotate(90deg);
+}
+.dir-right{
+    transform: rotate(0deg);
+}
+
+
+
+div.card.snake{
+    background: rgb(172, 174, 255);
+    background-image: url('./img/body.jpg');
+    background-size: 100%;
+}
+div.card.head{
+    background: rgb(172, 174, 255);
+    background-image: url('./img/head.png');
+    background-size: 100%;
+}
+
+div.card.normal{
+    background: rgb(195, 255, 172);
+    background-image: url('./img/grass.jpg');
+    background-size: 100%;
+}
+
+div.card.apple{
+    background: rgb(253, 49, 49);
+    background-image: url('./img/apple.jpg');
+    background-size: 100%;
+
+}
+
+#game{
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.modal{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(2px);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+#gameMenu div{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#gameMenu .logo{
+    padding: 10px;
+    border-radius: 12px;
+   
+}
+
+#gameMenu button{
+    margin-top: 20px;
+    animation: movement-shadow 2s infinite;
+    background: black;
+    border-radius: 4px;
+    font-size: 20px;
+    color: blueviolet;
+    border: 2px solid blueviolet;
+    transition: 500ms;
+    height: 40px;
+    font-weight: bold;
+}
+#gameMenu button:hover{
+    color: rgb(79, 6, 147);
+    border: 2px solid rgb(79, 6, 147);
+    font-size: 25px;
+}
+
+
+
+#gameOver h2{
+    font-size: 40px;
+    color: rgb(255, 0, 191);
+    background: rgb(79, 6, 147);
+    padding: 20px;
+    border-radius: 14px;
+}
+
+#gameOver button{
+    margin-top: 20px;
+    animation: movement-shadow 2s infinite;
+    background: black;
+    border-radius: 4px;
+    font-size: 20px;
+    color: blueviolet;
+    border: 2px solid blueviolet;
+    transition: 500ms;
+    height: 40px;
+    font-weight: bold;
+}
+
+#gameOver{
+    display: none;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(10px);
+    color: white;
+    text-align: center;
+}
+
+#gameOver p{
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#score{
+    color: white;
+}
+
+@keyframes movement-shadow {
+    from {
+        box-shadow: 0px 0px 10px rgb(255, 0, 191);
+        background: rgb(252, 224, 245);
+    }
+
+    50%{
+        box-shadow: 0px 0px 30px rgb(17, 255, 0);
+        background: rgb(217, 255, 214);
+    }
+  
+    to {
+        box-shadow: 0px 0px 10px rgb(255, 0, 191);
+        background: rgb(252, 224, 245);
+    }
+}

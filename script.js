@@ -63,7 +63,7 @@ document.addEventListener('keydown', (e)=>{
 
 
 function start(){
-    playAudio('start');
+    playAudio(`start${parseInt(Math.random() * 6) + 1}`);
     tag = document.getElementById('tag').value.toUpperCase() || 'YOU';
     startModal.style.display = 'none';
     interval = setInterval(()=>{
@@ -72,7 +72,9 @@ function start(){
         mountedBoard = setAppleOnBoard(mountedBoard);
         renderBoard(mountedBoard);
         checkIntersection();
-        score+=snake.length;
+        if(snake.length >= 40){
+            score+=snake.length;
+        }
         domScore.innerHTML = "Score: "+score;
     },80);
 }
